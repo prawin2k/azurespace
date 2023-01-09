@@ -1,6 +1,6 @@
-# Azure Space - 7. Azure Bicep - Create App Service Plan with Linux Operation System
+# Azure Space - 8. Azure Bicep - Create App Service
 
-## What is App Service Plan?
+## What is App Service?
 
 App Service Plan defines all the computing Infrastructure resources requried for a website to run.
 

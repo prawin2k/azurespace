@@ -4,7 +4,7 @@
 
 App Service Plan defines all the computing Infrastructure resources requried for a website to run.
 
-## Execute & Deploy Azure Resource Group to a Subscription using the below command.
+## Execute & Deploy resources to Azure Resource Group using the below command.
 
 ```
 az deployment group create -g azbicep-dev-eus-rg1 -f 2.AppServicePlan.bicep
