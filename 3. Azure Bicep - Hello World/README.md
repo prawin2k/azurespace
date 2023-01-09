@@ -27,5 +27,5 @@ az deployment group create --resource-group <RGName> --template-file biceptempla
 
 ## You can learn more aboue Azure using below resources
 
-Youtube Channel - [Azure Space](https://www.youtube.com/channel/UCAyKimu-hwmy0kpYprjSPBg?sub_confirmation=1)
-Website: <https://praveenkumarsreeram.com>
+* Youtube Channel - [Azure Space](https://www.youtube.com/channel/UCAyKimu-hwmy0kpYprjSPBg?sub_confirmation=1)
+* Website: <https://praveenkumarsreeram.com>
