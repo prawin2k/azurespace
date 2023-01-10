@@ -1,7 +1,7 @@
-# Azure Space - 13. Azure Bicep - Create Logical SQL Server and SQL Database
+# Azure Space - 14. Azure Bicep - Whitelist IP Address for Azure SQL Database
 
 ## What is Azure SQL Database?
-Azure SQL Database is a Managed DBaaS service offering from Microsoft
+Azure SQL Database is a Managed DBaaS service offering from Microsoft.
 
 ## Execute & Deploy resources to Azure Resource Group using the below command.
 
