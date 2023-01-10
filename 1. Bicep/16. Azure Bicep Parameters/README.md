@@ -1,4 +1,4 @@
-# Azure Space - 15. Azure Bicep - Modules
+# Azure Space - 16. Azure Bicep Parameters
 
 ## What is a Bicep Module?
 Modules are helpful for organizing the Bicep code into reusable components.
