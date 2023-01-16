@@ -6,13 +6,13 @@
             "value": "azbicep-dev-eus-asp1"
         },
         "pAppService": {
-            "value": "azbicep-dev-eus-wapp1"
+            "value": "azbicep-dev-eus-wapp2"
         },
         "pAppInsights": {
             "value": "azbicep-dev-eus-wapp1-ai"
         },
         "pSQLServer": {
-            "value": "azbicep-dev-eus-sqlserver"
+            "value": "azbicep-dev-eus-sqlserver2"
         },
         "pAdministratorLogin": {
             "value": "sqladmin"
@@ -20,7 +20,7 @@
         "pAdministratorLoginPassword": {
             "reference": {
                 "keyVault": {
-                    "id": "/subscriptions/<sub-id>/resourceGroups/<rg-name>/providers/Microsoft.KeyVault/vaults/<KV-Name>"
+                    "id": "/subscriptions/366c4797-e7c7-4050-9b87-d2f9641c0268/resourceGroups/azbicep-dev-eus-rg1/providers/Microsoft.KeyVault/vaults/azbicep-dev-eus-kv1"
                 },
                 "secretName": "sqladminpassword"
 

@@ -1,10 +1,10 @@
 param pAppServicePlan string 
 param pAppService string 
 param pInstrumentationKey string
-
+param pLocation string = resourceGroup().location
 resource azbicepasp1 'Microsoft.Web/serverfarms@2022-03-01' = {
   name: pAppServicePlan
-  location: resourceGroup().location
+  location: pLocation
   sku: {
     name: 'S1'
     capacity: 1
@@ -13,7 +13,7 @@ resource azbicepasp1 'Microsoft.Web/serverfarms@2022-03-01' = {
 
 resource azbicepas 'Microsoft.Web/sites@2022-03-01' = {
   name: pAppService
-  location:  resourceGroup().location
+  location:  pLocation
   properties: {
     serverFarmId: resourceId('Microsofot.Web/serverfarms',pAppServicePlan)
   }
