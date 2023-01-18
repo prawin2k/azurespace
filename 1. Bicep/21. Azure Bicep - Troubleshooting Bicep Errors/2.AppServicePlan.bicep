@@ -6,7 +6,7 @@ resource azbicepasp1 'Microsoft.Web/serverfarms@2022-03-01' = {
   name: pAppServicePlan
   location: pLocation
   sku: {
-    name: 'Free'
+    name: 'F1'
     capacity: 1
   }
 }
