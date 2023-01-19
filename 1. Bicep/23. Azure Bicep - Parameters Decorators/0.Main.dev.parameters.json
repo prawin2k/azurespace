@@ -16,15 +16,6 @@
         },
         "pAdministratorLogin": {
             "value": "sqladmin"
-        },
-        "pAdministratorLoginPassword": {
-            "reference": {
-                "keyVault": {
-                    "id": "/subscriptions/366c4797-e7c7-4050-9b87-d2f9641c0268/resourceGroups/azbicep-dev-eus-rg1/providers/Microsoft.KeyVault/vaults/azbicep-dev-eus-kv1"
-                },
-                "secretName": "sqladminpassword"
-
-            }
         }
     }
 }

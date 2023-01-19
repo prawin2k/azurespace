@@ -5,8 +5,6 @@ param pAppInsights string
 param pSQLServer string = 'azbicep-dev-eus-sqlserver'
 param pAdministratorLogin string
 param pLocation string = resourceGroup().location
-@secure()
-param pAdministratorLoginPassword string
 param pSKUName string = 'F1'
 resource KeyVault 'Microsoft.KeyVault/vaults@2022-07-01' existing = {
   name: 'azbicep-dev-eus-kv1'
