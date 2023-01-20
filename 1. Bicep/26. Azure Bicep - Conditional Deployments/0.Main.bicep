@@ -1,4 +1,4 @@
-param Env string = 'prd'
+param Env string = 'dev'
 param pAppServicePlan string 
 param pAppService string 
 param pAppInsights string
@@ -6,7 +6,7 @@ param pAppInsights string
 param pSQLServer string = 'azbicep-dev-eus-sqlserver'
 param pAdministratorLogin string
 param pLocation string = resourceGroup().location
-param pSKUName string = (Env == 'dev')? 'S1' : 'S2'
+param pSKUName string = (Env == 'dev')? 'F1' : 'S2'
 param pSKUCapacity int = (Env == 'dev')? 1 : 2
 resource KeyVault 'Microsoft.KeyVault/vaults@2022-07-01' existing = {
   name: 'azbicep-dev-eus-kv1'

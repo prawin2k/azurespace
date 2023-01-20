@@ -28,14 +28,14 @@ resource azbicepasp1 'Microsoft.Web/serverfarms@2022-03-01' = {
   }
 }
 
-resource WebAppSlot 'Microsoft.Web/sites/slots@2022-03-01' = if(pEnv=='dev') {
-  name: 'staging'
-  location: pLocation
-  parent: azbicepas
-  properties: {
-    serverFarmId: azbicepasp1.id
-  }
-}
+// resource WebAppSlot 'Microsoft.Web/sites/slots@2022-03-01' = if(pEnv=='dev') {
+//   name: 'staging'
+//   location: pLocation
+//   parent: azbicepas
+//   properties: {
+//     serverFarmId: azbicepasp1.id
+//   }
+// }
 
 resource azbicepas 'Microsoft.Web/sites@2022-03-01' = {
   name: pAppService
