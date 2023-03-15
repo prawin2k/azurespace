@@ -1,6 +1,8 @@
 param pLocation string 
 param pServerFarmId string
 param pFunctionAppName string
+param pStorageAccountName string
+param pStorageAccountId string
 resource azureFunction 'Microsoft.Web/sites@2020-12-01' = {
   name: pFunctionAppName
   location: pLocation
@@ -12,20 +14,15 @@ resource azureFunction 'Microsoft.Web/sites@2020-12-01' = {
       appSettings: [
         {
           name: 'AzureWebJobsDashboard'
-          value: 'DefaultEndpointsProtocol=https;AccountName=azbicepdeveusstrg1;AccountKey=<key>;EndpointSuffix=core.windows.net'
-          // value: 'DefaultEndpointsProtocol=https;AccountName=storageAccountName1;AccountKey=${listKeys('storageAccountID1', '2019-06-01').key1}'
+          value: 'DefaultEndpointsProtocol=https;AccountName=${pStorageAccountName};AccountKey=${listKeys(pStorageAccountId, '2021-09-01').keys[0].value}'
         }
         {
           name: 'AzureWebJobsStorage'
-          value: 'DefaultEndpointsProtocol=https;AccountName=azbicepdeveusstrg1;AccountKey=<key>;EndpointSuffix=core.windows.net'
-
-          // value: 'DefaultEndpointsProtocol=https;AccountName=storageAccountName2;AccountKey=${listKeys('storageAccountID2', '2019-06-01').key1}'
+          value: 'DefaultEndpointsProtocol=https;AccountName=${pStorageAccountName};AccountKey=${listKeys(pStorageAccountId, '2021-09-01').keys[0].value}'
         }
         {
           name: 'WEBSITE_CONTENTAZUREFILECONNECTIONSTRING'
-          value: 'DefaultEndpointsProtocol=https;AccountName=azbicepdeveusstrg1;AccountKey=<key>;EndpointSuffix=core.windows.net'
-
-          // value: 'DefaultEndpointsProtocol=https;AccountName=storageAccountName3;AccountKey=${listKeys('storageAccountID3', '2019-06-01').key1}'
+          value: 'DefaultEndpointsProtocol=https;AccountName=${pStorageAccountName};AccountKey=${listKeys(pStorageAccountId, '2021-09-01').keys[0].value}'
         }
         {
           name: 'WEBSITE_CONTENTSHARE'
