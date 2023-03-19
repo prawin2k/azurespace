@@ -25,6 +25,13 @@ module AppServicePlan_Linux 'AppServicePlan-Linux.bicep' = {
   }
 }
 
+module AppInsights '4.AppInsights.bicep' = {
+  name: 'AppInsights_Module'
+  params: {
+    pAppInsights: '${pFunctionAppName}-ai'
+    pLocation: pLocation
+  }
+}
 module FunctionApp 'AzureFunctionApp.bicep' = {
   name: 'FunctionApp'
   params: {
@@ -33,5 +40,6 @@ module FunctionApp 'AzureFunctionApp.bicep' = {
     pServerFarmId: AppServicePlan_Linux.outputs.AppServicePlanId
     pStorageAccountId: StorageAccount_Module.outputs.StorageAccountId
     pStorageAccountName: pStorageAccountName
+    pAppinsightsId: AppInsights.outputs.oAppInsightsid
   }
 }

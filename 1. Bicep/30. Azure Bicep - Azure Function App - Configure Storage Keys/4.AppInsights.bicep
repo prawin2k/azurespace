@@ -11,3 +11,4 @@ resource azbicepappinsights 'Microsoft.Insights/components@2020-02-02' = {
 }
 
 output oInstrumentationKey string = azbicepappinsights.properties.InstrumentationKey 
+output oAppInsightsid string = azbicepappinsights.id

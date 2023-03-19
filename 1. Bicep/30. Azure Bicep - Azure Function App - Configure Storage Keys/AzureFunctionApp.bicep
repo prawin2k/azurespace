@@ -3,6 +3,7 @@ param pServerFarmId string
 param pFunctionAppName string
 param pStorageAccountName string
 param pStorageAccountId string
+param pAppinsightsId string
 resource azureFunction 'Microsoft.Web/sites@2020-12-01' = {
   name: pFunctionAppName
   location: pLocation
@@ -34,8 +35,7 @@ resource azureFunction 'Microsoft.Web/sites@2020-12-01' = {
         }
         {
           name: 'APPINSIGHTS_INSTRUMENTATIONKEY'
-          value: '88e5a6d5-7ab4-4551-9818-d0a214b112fc'
-          // value: reference('insightsComponents.id', '2015-05-01').InstrumentationKey
+          value: reference(pAppinsightsId,'2015-05-01').InstrumentationKey
         }
         {
           name: 'FUNCTIONS_WORKER_RUNTIME'
