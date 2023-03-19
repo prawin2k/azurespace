@@ -6,7 +6,8 @@ param pSKUCapacity int
 param pSKUName string
 param pFunctionAppName string
 
-
+param pStartIndex int = 1
+param pCount int = 5
 module StorageAccount_Module  '5.StorageAccount.bicep' = {
   name: 'StorageAccount_Module'
   params: {
@@ -25,21 +26,21 @@ module AppServicePlan_Linux 'AppServicePlan-Linux.bicep' = {
   }
 }
 
-module AppInsights '4.AppInsights.bicep' = {
-  name: 'AppInsights_Module'
+// module AppInsights '4.AppInsights.bicep' = {
+//   name: 'AppInsights_Module'
+//   params: {
+//     pAppInsights: '${pFunctionAppName}-ai'
+//     pLocation: pLocation
+//   }
+// }
+module FunctionApp 'AzureFunctionApp.bicep' = [ for Index in range(pStartIndex,pCount) : {
+  name: 'FunctionApp-${Index}'
   params: {
-    pAppInsights: '${pFunctionAppName}-ai'
-    pLocation: pLocation
-  }
-}
-module FunctionApp 'AzureFunctionApp.bicep' = {
-  name: 'FunctionApp'
-  params: {
-    pFunctionAppName: pFunctionAppName
+    pFunctionAppName: '${pFunctionAppName}-${Index}'
     pLocation: pLocation
     pServerFarmId: AppServicePlan_Linux.outputs.AppServicePlanId
     pStorageAccountId: StorageAccount_Module.outputs.StorageAccountId
     pStorageAccountName: pStorageAccountName
-    pAppinsightsId: AppInsights.outputs.oAppInsightsid
+    pAppInsights: '${pFunctionAppName}-${Index}-ai'
   }
-}
+}]
