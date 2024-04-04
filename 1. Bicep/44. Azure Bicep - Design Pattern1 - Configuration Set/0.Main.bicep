@@ -2,7 +2,6 @@ param Env string
 param pAppServicePlan string 
 param pAppService string 
 param pAppInsights string
-
 param pLocation string = resourceGroup().location
 // param pSKUName string = (Env == 'dev')? 'F1' : 'S1'
 // param pSKUCapacity int = (Env == 'dev')? 1 : 2
