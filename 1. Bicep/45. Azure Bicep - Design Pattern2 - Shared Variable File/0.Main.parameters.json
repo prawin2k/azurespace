@@ -1,0 +1,19 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "pAppServicePlan": {
+            "value": "azbicep-prd-eus-asp1"
+        },
+        "pAppService": {
+            "value": "azbicep-prd-eus-wapp3"
+        },
+        "pAppInsights": {
+            "value": "azbicep-prd-eus-wapp1-ai"
+        },
+        "Env": {
+            "value": "Production"
+        }
+        
+    }
+}
