@@ -1,0 +1,6 @@
+{
+    "projectnameprefix":"azbicep",
+    "appserviceplanprefix":"asp",
+    "appserviceprefix":"wapp",
+    "appinsightsprefix":"ai"
+}
