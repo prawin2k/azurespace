@@ -23,3 +23,6 @@ resource virtualNetwork 'Microsoft.Network/virtualNetworks@2019-11-01' = {
   }
 }
 output vNetId string = virtualNetwork.id
+output sqlSubnetId string = resourceId('Microsoft.Network/virtualNetworks/subnets',vnetName,'snet-sql')
+output appSubnetId string = resourceId('Microsoft.Network/virtualNetworks/subnets',vnetName,'snet-web')
+
